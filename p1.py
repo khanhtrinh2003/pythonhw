@@ -10,7 +10,8 @@ encode_path= "encode"
 sys.path.append(encode_path)
 line_path= "line"
 sys.path.append(line_path)
-
+compare_path= "compare"
+sys.path.append(compare_path)
 #import file
 import tinhlaisuat
 import Gptrinh1
@@ -18,6 +19,7 @@ import Guessnumber
 import hinhhoc
 import encode1
 import ziczac
+import compare1
 #start
 i = 0
 while i < 1:
@@ -46,34 +48,5 @@ while i < 1:
     elif x == 6:
         ziczac.ziczac1()
     elif x == 8:
-        ds = []
-        nl = []
-        e = 'end'
-        a = 0
-        while True:
-            a += 1
-            s = input('nhập số: ')
-            if s != e:
-                ds.append(s)
-                continue
-            else:
-                print(ds)
-                for num in ds:
-                    if num not in nl:
-                        nl.append(num)
+        compare1.bublesort()
 
-                for m in range(0, len(nl) - 1):
-                    for n in range(m, len(nl)):
-                        if nl[m] > nl[n]:
-                            tempt = nl[m]
-                            nl[m] = nl[n]
-                            nl[n] = tempt
-                print(''.join(str(e) for e in nl))
-            w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
-            if w == 1:
-
-                i = 0
-                break
-            elif w == 2:
-
-                continue

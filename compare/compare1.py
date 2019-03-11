@@ -6,7 +6,7 @@ class bublesort:
         a = 0
         while True:
             a += 1
-            s = input('nhập số: ')
+            s = input('nhập số (\'end\' để kết thức): ')
             if s != e:
                 ds.append(s)
                 continue

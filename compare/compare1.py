@@ -22,6 +22,7 @@ class bublesort:
                             tempt = nl[m]
                             nl[m] = nl[n]
                             nl[n] = tempt
+                print("kết quả")
                 print(''.join(str(e) for e in nl))
             w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
             if w == 1:

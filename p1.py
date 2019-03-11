@@ -47,6 +47,6 @@ while i < 1:
         encode1.encode11()
     elif x == 6:
         ziczac.ziczac1()
-    elif x == 8:
+    elif x == 7:
         compare1.bublesort()
 

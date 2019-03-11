@@ -8,6 +8,8 @@ geometry_path= "geometry"
 sys.path.append(geometry_path)
 encode_path= "encode"
 sys.path.append(encode_path)
+line_path= "line"
+sys.path.append(line_path)
 
 #import file
 import tinhlaisuat
@@ -15,6 +17,7 @@ import Gptrinh1
 import Guessnumber
 import hinhhoc
 import encode1
+import ziczac
 #start
 i = 0
 while i < 1:
@@ -41,26 +44,7 @@ while i < 1:
     elif x == 5:
         encode1.encode11()
     elif x == 6:
-        j = 0
-        while j < 1:
-            n = int(input("NHẬP SÔ ĐƯỜNG ZICZAC: "))
-            m = int(input("NHẬP SỐ ĐIỂM TRÊN MỖI ĐƯỜNG "))
-            hang = 0
-            for i in range(0, m):
-                for j in range(0, n * (m - 1) + 1):
-                    if j % (2 * (m - 1)) == m - 1 - hang or j % (2 * (m - 1)) == m - 1 + hang:
-                        print('*', end="")
-                    else:
-                        print(" ", end="")
-                print("")
-                hang = hang + 1
-            w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
-            if w == 1:
-                i = 0
-                break
-            elif w == 2:
-                j = 0
-                continue
+        ziczac.ziczac1()
     elif x == 8:
         ds = []
         nl = []

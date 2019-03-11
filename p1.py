@@ -1,0 +1,123 @@
+#import folder
+import sys
+gphuongtrinh_path= "gphuongtrinh"
+sys.path.append(gphuongtrinh_path)
+Game_path= "Game"
+sys.path.append(Game_path)
+geometry_path= "geometry"
+sys.path.append(geometry_path)
+
+#import file
+import tinhlaisuat
+import Gptrinh1
+import Guessnumber
+import hinhhoc
+
+#start
+i = 0
+while i < 1:
+    while True:
+        try:
+            print('\n\n------------------------------------------')
+            print('|                  HOME                  |')
+            print('------------------------------------------')
+            print('CHỌN SỐ')
+            x = int(input('1:TÍNH LÃI SUẤT \n2:GIẢI PHƯƠNG TRÌNH \n3:TRÒ CHƠI ĐOÁN SỐ\n4:HÌNH HỌC\n5:MÃ HÓA\n6:VẼ ĐƯỜNG ZICZAC\n7:SO SÁNH\n'))
+            break
+        except ValueError:
+            print('nhập lại')
+
+    if x == 1:
+        tinhlaisuat.Tinhlai()
+    elif x == 2:
+        Gptrinh1.Gptrinh()
+    elif x == 3:
+        Guessnumber.Gn()
+
+    elif x == 4:
+        hinhhoc.Hh()
+    elif x == 5:
+        m = 0
+        while m < 1:
+            key = {'a': 'n', 'b': 'o', 'c': 'p', 'd': 'q', 'e': 'r', 'f': 's', 'g': 't', 'h': 'u',
+                   'i': 'v', 'j': 'w', 'k': 'x', 'l': 'y', 'm': 'z', 'n': 'a', 'o': 'b', 'p': 'c',
+                   'q': 'd', 'r': 'e', 's': 'f', 't': 'g', 'u': 'h', 'v': 'i', 'w': 'j', 'x': 'k',
+                   'y': 'l', 'z': 'm', 'A': 'N', 'B': 'O', 'C': 'P', 'D': 'Q', 'E': 'R', 'F': 'S',
+                   'G': 'T', 'H': 'U', 'I': 'V', 'J': 'W', 'K': 'X', 'L': 'Y', 'M': 'Z', 'N': 'A',
+                   'O': 'B', 'P': 'C', 'Q': 'D', 'R': 'E', 'S': 'F', 'T': 'G', 'U': 'H', 'V': 'I',
+                   'W': 'J', 'X': 'K', 'Y': 'L', 'Z': 'M', ' ': ' ', '0': '!', '4': '@', '6': '#',
+                   '8': '$', '1': '%', '3': '^', '5': '&', '7': '*', '9': '(', '2': ')', 'ă': 'a8',
+                   'Ă': 'A8', 'â': 'a6', 'Â': 'A6', 'ê': 'e6', 'Ê': 'E6', 'ô': 'o6', 'Ô': 'O6', 'ư': 'u7',
+                   'ơ': 'o7', 'Ư': 'U7', 'Ơ': 'O7', 'đ': 'd9', 'Đ': 'D9','a8': 'ă',
+                   'A8': 'Ă', 'a6': 'â', 'A6': 'Â', 'e6': 'ê', 'E6': 'Ê', 'O6': 'Ô', 'o6': 'ô', 'u7': 'ư',
+                   'o7': 'ơ', 'U7': 'Ư', 'O7': 'Ơ', 'd9': 'đ', 'D9': 'Đ',
+                   }
+            chuoi = input('NHẬP CÂU CẦN MÃ HÓA HOẶC GIẢI MÃ: ')
+
+            password = []
+
+            for i in range(len(chuoi)):
+                x = key[chuoi[i]]
+                password.append(x)
+
+            print(''.join(str(e) for e in password))
+            w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
+            if w == 1:
+                i = 0
+                break
+            elif w == 2:
+                i = 0
+                continue
+    elif x == 6:
+        j = 0
+        while j < 1:
+            n = int(input("NHẬP SÔ ĐƯỜNG ZICZAC: "))
+            m = int(input("NHẬP SỐ ĐIỂM TRÊN MỖI ĐƯỜNG "))
+            hang = 0
+            for i in range(0, m):
+                for j in range(0, n * (m - 1) + 1):
+                    if j % (2 * (m - 1)) == m - 1 - hang or j % (2 * (m - 1)) == m - 1 + hang:
+                        print('*', end="")
+                    else:
+                        print(" ", end="")
+                print("")
+                hang = hang + 1
+            w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
+            if w == 1:
+                i = 0
+                break
+            elif w == 2:
+                j = 0
+                continue
+    elif x == 8:
+        ds = []
+        nl = []
+        e = 'end'
+        a = 0
+        while True:
+            a += 1
+            s = input('nhập số: ')
+            if s != e:
+                ds.append(s)
+                continue
+            else:
+                print(ds)
+                for num in ds:
+                    if num not in nl:
+                        nl.append(num)
+
+                for m in range(0, len(nl) - 1):
+                    for n in range(m, len(nl)):
+                        if nl[m] > nl[n]:
+                            tempt = nl[m]
+                            nl[m] = nl[n]
+                            nl[n] = tempt
+                print(''.join(str(e) for e in nl))
+            w = int(input('1: THOÁT RA\n2: TIẾP TỤC\n'))
+            if w == 1:
+
+                i = 0
+                break
+            elif w == 2:
+
+                continue

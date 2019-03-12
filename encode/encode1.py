@@ -32,4 +32,4 @@ class encode11:
                 i = 0
                 continue
 
-#end
+#ends

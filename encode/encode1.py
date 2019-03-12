@@ -31,3 +31,5 @@ class encode11:
             elif w == 2:
                 i = 0
                 continue
+
+#end
